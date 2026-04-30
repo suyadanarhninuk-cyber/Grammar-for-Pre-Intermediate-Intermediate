@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Grammar — Unit 2: Past Tenses Exercise</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAF7F2;
+  --surface: #FFFFFF;
+  --card: #FFFFFF;
+  --accent: #8B4513;
+  --accent2: #B8651A;
+  --accent-light: #F5E6D0;
+  --accent-glow: rgba(139,69,19,0.06);
+  --correct: #2D7A3A;
+  --correct-bg: #E8F5EC;
+  --correct-border: #4CAF6A;
+  --wrong: #C0392B;
+  --wrong-bg: #FDECEB;
+  --wrong-border: #E74C3C;
+  --text: #2C1810;
+  --text-dim: #6B5B50;
+  --text-muted: #A0907E;
+  --border: #E8DFD4;
+  --border-dark: #D4C8B8;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 12px rgba(44,24,16,0.06);
+  --shadow-lg: 0 8px 30px rgba(44,24,16,0.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.65;
+}
+
+/* Subtle texture */
+body::before {
+  content:'';
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 50px,
+    rgba(139,69,19,0.012) 50px, rgba(139,69,19,0.012) 51px
+  );
+  pointer-events:none; z-index:9999;
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+}
+.header .badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #FFF;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  padding: 5px 16px;
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+}
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.5px;
+}
+.header .subtitle {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+/* Score bar */
+.score-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 1.2rem;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 0.5rem;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+.score-bar .score-text {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.score-bar .score-text strong {
+  color: var(--accent);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.score-bar .progress-wrap {
+  flex: 1;
+  margin: 0 1rem;
+  height: 6px;
+  background: var(--accent-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.score-bar .progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.score-bar .reset-btn {
+  background: none;
+  border: 1.5px solid var(--border-dark);
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-weight: 600;
+}
+.score-bar .reset-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Exercise section */
+.exercise-section {
+  margin-bottom: 2.8rem;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+.section-num {
+  width: 38px; height: 38px;
+  background: var(--accent);
+  color: #FFF;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.exercise-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+.instructions {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding-left: 3.3rem;
+}
+
+/* Question card */
+.question-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s;
+  box-shadow: var(--shadow);
+}
+.question-card.correct { border-color: var(--correct-border); background: var(--correct-bg); box-shadow: 0 2px 12px rgba(45,122,58,0.08); }
+.question-card.wrong { border-color: var(--wrong-border); background: var(--wrong-bg); box-shadow: 0 2px 12px rgba(192,57,43,0.08); }
+
+.q-num {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.q-text {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  line-height: 1.75;
+}
+.q-text .blank {
+  display: inline-block;
+  min-width: 110px;
+  border-bottom: 2px dashed var(--text-muted);
+  margin: 0 3px;
+  text-align: center;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Options */
+.options {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.option-btn {
+  background: var(--bg);
+  border: 1.5px solid var(--border-dark);
+  color: var(--text);
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.option-btn:hover:not(.chosen) {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+.option-btn.chosen { pointer-events: none; }
+.option-btn.chosen.right {
+  border-color: var(--correct-border);
+  background: var(--correct-bg);
+  color: var(--correct);
+}
+.option-btn.chosen.wrong-choice {
+  border-color: var(--wrong-border);
+  background: var(--wrong-bg);
+  color: var(--wrong);
+  text-decoration: line-through;
+}
+.option-btn.show-correct {
+  border-color: var(--correct-border);
+  color: var(--correct);
+  border-style: dashed;
+}
+
+/* Matching — drag-style but with click */
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+.match-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.3rem;
+}
+.match-item {
+  background: var(--bg);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.match-item strong { color: var(--accent); }
+
+.match-select {
+  background: var(--bg);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  color: var(--text);
+  cursor: pointer;
+  width: 100%;
+  appearance: auto;
+}
+.match-select:focus { border-color: var(--accent); outline:none; }
+.match-select.correct-sel { border-color: var(--correct-border); color: var(--correct); background: var(--correct-bg); }
+.match-select.wrong-sel { border-color: var(--wrong-border); color: var(--wrong); background: var(--wrong-bg); }
+
+.check-all-btn {
+  background: var(--accent);
+  color: #FFF;
+  border: none;
+  padding: 10px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  display: block;
+  margin: 1rem auto 0;
+}
+.check-all-btn:hover { background: var(--accent2); }
+.check-all-btn:disabled { opacity: 0.4; cursor: default; }
+
+/* Explanation */
+.explanation {
+  display: none;
+  margin-top: 0.8rem;
+  padding: 0.8rem 1rem;
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  animation: fadeIn 0.3s ease;
+}
+.explanation.show { display: block; }
+.explanation strong { color: var(--accent); }
+
+/* Completion banner */
+.completion-banner {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  margin-top: 2rem;
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.5s ease;
+}
+.completion-banner.show { display: block; }
+.completion-banner h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.completion-banner p { color: var(--text-dim); font-size: 0.95rem; }
+
+/* Context block */
+.context-block {
+  background: var(--accent-light);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+.context-block strong { color: var(--accent); }
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(6px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+@media (max-width:600px) {
+  .header h1 { font-size:1.55rem; }
+  .options { flex-direction: column; }
+  .match-grid { grid-template-columns: 1fr; }
+  .container { padding: 1.2rem 1rem 3rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="badge">Cambridge Grammar for IELTS · Unit 2</div>
+    <h1>Past Simple, Past Continuous, <em>used to</em> &amp; <em>would</em></h1>
+    <div class="subtitle">Interactive exercises — match, choose, and check your understanding</div>
+  </div>
+
+  <div class="score-bar">
+    <div class="score-text"><strong id="scoreNum">0</strong> / <span id="totalNum">7</span></div>
+    <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+    <button class="reset-btn" onclick="resetAll()">Reset</button>
+  </div>
+
+  <!-- ═══════ EXERCISE 1: MATCHING ═══════ -->
+  <div class="exercise-section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Grammar Focus Task</h2>
+    </div>
+    <p class="instructions">Read the sentences from the Portia spiders text. Match each one (1–3) to the correct grammatical explanation (a–c).</p>
+
+    <div class="context-block">
+      This exercise is based on a reading passage about <strong>Portia spiders</strong> — jumping spiders that hunt other spiders using remarkably intelligent strategies.
+    </div>
+
+    <!-- Sentence 1 -->
+    <div class="question-card" id="m1">
+      <div class="q-num">Sentence 1</div>
+      <div class="q-text">The researchers <strong>allowed</strong> various prey spiders to spin webs in the laboratory and then <strong>introduced</strong> Portia spiders.</div>
+      <div style="margin-bottom:0.5rem;">
+        <select class="match-select" id="sel-m1">
+          <option value="">— Select the explanation —</option>
+          <option value="a">a. a background scene and an action</option>
+          <option value="b">b. a series of single past completed actions</option>
+          <option value="c">c. a repeated action in the past</option>
+        </select>
+      </div>
+      <div class="explanation" id="exp-m1">Correct answer: <strong>(b) a series of single past completed actions</strong>. Both "allowed" and "introduced" are in the <strong>Past Simple</strong> — they describe two actions that happened one after the other as completed events: first the researchers allowed, then they introduced.</div>
+    </div>
+
+    <!-- Sentence 2 -->
+    <div class="question-card" id="m2">
+      <div class="q-num">Sentence 2</div>
+      <div class="q-text">Portia spiders <strong>moved</strong> more when the webs <strong>were shaking</strong> than when they were still.</div>
+      <div style="margin-bottom:0.5rem;">
+        <select class="match-select" id="sel-m2">
+          <option value="">— Select the explanation —</option>
+          <option value="a">a. a background scene and an action</option>
+          <option value="b">b. a series of single past completed actions</option>
+          <option value="c">c. a repeated action in the past</option>
+        </select>
+      </div>
+      <div class="explanation" id="exp-m2">Correct answer: <strong>(a) a background scene and an action</strong>. "Were shaking" is the <strong>Past Continuous</strong> — it sets the <strong>background scene</strong> (the webs were already shaking). "Moved" is the <strong>Past Simple</strong> — the main action happening within that background.</div>
+    </div>
+
+    <!-- Sentence 3 -->
+    <div class="question-card" id="m3">
+      <div class="q-num">Sentence 3</div>
+      <div class="q-text">They noticed that the spiders <strong>would sometimes shake</strong> their quarry's web violently.</div>
+      <div style="margin-bottom:0.5rem;">
+        <select class="match-select" id="sel-m3">
+          <option value="">— Select the explanation —</option>
+          <option value="a">a. a background scene and an action</option>
+          <option value="b">b. a series of single past completed actions</option>
+          <option value="c">c. a repeated action in the past</option>
+        </select>
+      </div>
+      <div class="explanation" id="exp-m3">Correct answer: <strong>(c) a repeated action in the past</strong>. "Would sometimes shake" uses <strong>would + verb</strong> to describe a <strong>habitual or repeated action in the past</strong>. The word "sometimes" reinforces that this happened more than once.</div>
+    </div>
+
+    <button class="check-all-btn" id="checkMatchBtn" onclick="checkMatching()">Check Matching Answers</button>
+  </div>
+
+  <!-- ═══════ EXERCISE 2: MULTIPLE CHOICE ═══════ -->
+  <div class="exercise-section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Past Tense Rules</h2>
+    </div>
+    <p class="instructions">Choose the correct verb form for each sentence based on the rules for past tenses, states, and habits.</p>
+
+    <!-- Q1 -->
+    <div class="question-card" id="q1">
+      <div class="q-num">Question 1</div>
+      <div class="q-text">He <span class="blank">______</span> a car before he moved to the city.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q1','wrong')">would own</button>
+        <button class="option-btn" onclick="checkMC(this,'q1','right')">used to own</button>
+      </div>
+      <div class="explanation" id="exp-q1"><strong>"Own"</strong> is a <strong>state verb</strong> (describing possession, not an action). While both <em>used to</em> and <em>would</em> can describe past repeated <strong>actions</strong>, you <strong>cannot use <em>would</em> for past states</strong>. Only <em>used to</em> works with state verbs like own, be, have, know, like, live.</div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-card" id="q2">
+      <div class="q-num">Question 2</div>
+      <div class="q-text">Bill Murphy <span class="blank">______</span> for the police force for 17 years.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q2','right')">worked</button>
+        <button class="option-btn" onclick="checkMC(this,'q2','wrong')">used to work</button>
+      </div>
+      <div class="explanation" id="exp-q2">You <strong>cannot use <em>used to</em> or <em>would</em></strong> when you state <strong>exactly how long</strong> a past action lasted (e.g., "for 17 years"). When a <strong>specific duration</strong> is given, you must use the <strong>Past Simple</strong>. <em>Used to</em> implies a general past habit without a stated time frame.</div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-card" id="q3">
+      <div class="q-num">Question 3</div>
+      <div class="q-text">A woman <span class="blank">______</span> the police to report a robbery at her house.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q3','right')">called</button>
+        <button class="option-btn" onclick="checkMC(this,'q3','wrong')">was calling</button>
+      </div>
+      <div class="explanation" id="exp-q3">This describes a <strong>single, completed action</strong> in the past — the woman made one phone call. Single completed past actions require the <strong>Past Simple</strong>. The Past Continuous ("was calling") would imply the action was <strong>in progress</strong> when something else happened — but no interrupting event is mentioned here.</div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-card" id="q4">
+      <div class="q-num">Question 4</div>
+      <div class="q-text">He was doing his homework in his bedroom when the burglar <span class="blank">______</span> into the house.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q4','right')">came</button>
+        <button class="option-btn" onclick="checkMC(this,'q4','wrong')">was coming</button>
+      </div>
+      <div class="explanation" id="exp-q4">The <strong>Past Continuous</strong> ("was doing") sets the <strong>background scene</strong> — this was already happening. The <strong>Past Simple</strong> ("came") introduces the <strong>shorter action that interrupts</strong> the background. This is the classic pattern: <strong>Past Continuous (background) + Past Simple (interruption)</strong>.</div>
+    </div>
+  </div>
+
+  <div class="completion-banner" id="completionBanner">
+    <h3>🎉 Excellent work!</h3>
+    <p>You've completed all exercises for Unit 2: Past Simple, Past Continuous, <em>used to</em> & <em>would</em>.</p>
+  </div>
+
+</div>
+
+<script>
+let score = 0;
+const total = 7; // 3 matching + 4 MC
+const answered = new Set();
+
+function updateScore() {
+  document.getElementById('scoreNum').textContent = score;
+  document.getElementById('totalNum').textContent = total;
+  document.getElementById('progressFill').style.width = (score/total*100)+'%';
+  if (answered.size >= total) {
+    document.getElementById('completionBanner').classList.add('show');
+  }
+}
+
+// ── MATCHING ──
+function checkMatching() {
+  const correctAnswers = { m1:'b', m2:'a', m3:'c' };
+  let allFilled = true;
+
+  ['m1','m2','m3'].forEach(id => {
+    const sel = document.getElementById('sel-'+id);
+    if (!sel.value) { allFilled = false; return; }
+    if (answered.has(id)) return;
+    answered.add(id);
+
+    const card = document.getElementById(id);
+    if (sel.value === correctAnswers[id]) {
+      sel.classList.add('correct-sel');
+      card.classList.add('correct');
+      score++;
+    } else {
+      sel.classList.add('wrong-sel');
+      card.classList.add('wrong');
+      // Show correct
+      setTimeout(() => {
+        sel.value = correctAnswers[id];
+        sel.classList.remove('wrong-sel');
+        sel.classList.add('correct-sel');
+      }, 1200);
+    }
+    sel.disabled = true;
+    document.getElementById('exp-'+id).classList.add('show');
+  });
+
+  if (!allFilled) {
+    // Brief visual hint
+    ['m1','m2','m3'].forEach(id => {
+      const sel = document.getElementById('sel-'+id);
+      if (!sel.value && !answered.has(id)) {
+        sel.style.borderColor = 'var(--wrong)';
+        setTimeout(() => { sel.style.borderColor = ''; }, 800);
+      }
+    });
+    return;
+  }
+
+  document.getElementById('checkMatchBtn').disabled = true;
+  updateScore();
+}
+
+// ── MULTIPLE CHOICE ──
+function checkMC(btn, qId, result) {
+  if (answered.has(qId)) return;
+  answered.add(qId);
+  const card = document.getElementById(qId);
+  const buttons = card.querySelectorAll('.option-btn');
+  buttons.forEach(b => b.classList.add('chosen'));
+
+  if (result === 'right') {
+    btn.classList.add('right');
+    card.classList.add('correct');
+    score++;
+  } else {
+    btn.classList.add('wrong-choice');
+    card.classList.add('wrong');
+    buttons.forEach(b => { if (b !== btn) b.classList.add('show-correct'); });
+  }
+  document.getElementById('exp-'+qId).classList.add('show');
+  updateScore();
+}
+
+// ── RESET ──
+function resetAll() {
+  score = 0;
+  answered.clear();
+
+  // Reset matching
+  ['m1','m2','m3'].forEach(id => {
+    const card = document.getElementById(id);
+    card.classList.remove('correct','wrong');
+    const sel = document.getElementById('sel-'+id);
+    sel.value = '';
+    sel.disabled = false;
+    sel.classList.remove('correct-sel','wrong-sel');
+    document.getElementById('exp-'+id).classList.remove('show');
+  });
+  document.getElementById('checkMatchBtn').disabled = false;
+
+  // Reset MC
+  ['q1','q2','q3','q4'].forEach(id => {
+    const card = document.getElementById(id);
+    card.classList.remove('correct','wrong');
+    card.querySelectorAll('.option-btn').forEach(b => {
+      b.classList.remove('chosen','right','wrong-choice','show-correct');
+    });
+    document.getElementById('exp-'+id).classList.remove('show');
+  });
+
+  document.getElementById('completionBanner').classList.remove('show');
+  updateScore();
+}
+</script>
+</body>
+</html>
