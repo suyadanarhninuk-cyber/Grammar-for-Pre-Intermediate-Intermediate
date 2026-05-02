@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Grammar — Unit 1: Present Tenses Exercise</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0E1420;
+  --surface: #161E2E;
+  --card: #1C2640;
+  --card-hover: #222E4A;
+  --accent: #C9880A;
+  --accent-light: #F5D98A;
+  --accent-glow: rgba(201,136,10,0.15);
+  --correct: #2ECC71;
+  --correct-bg: rgba(46,204,113,0.08);
+  --wrong: #E74C3C;
+  --wrong-bg: rgba(231,76,60,0.08);
+  --text: #E8EFF5;
+  --text-dim: #8A99B2;
+  --text-muted: #5A6A82;
+  --border: #2A3650;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Grain overlay */
+body::before {
+  content:'';
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999; opacity:0.5;
+}
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.header .badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
+}
+.header .subtitle {
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+/* Score bar */
+.score-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 0.5rem;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+.score-bar .score-text {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.score-bar .score-text strong {
+  color: var(--accent-light);
+  font-size: 1.1rem;
+}
+.score-bar .progress-wrap {
+  flex: 1;
+  margin: 0 1.2rem;
+  height: 6px;
+  background: var(--card);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.score-bar .progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.score-bar .reset-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.score-bar .reset-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+}
+
+/* Exercise section */
+.exercise-section {
+  margin-bottom: 2.5rem;
+}
+.exercise-section .section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.exercise-section .section-num {
+  width: 36px; height: 36px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.exercise-section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.35rem;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+.exercise-section .instructions {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  padding-left: 3.2rem;
+}
+
+/* Question card */
+.question-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s;
+}
+.question-card.correct { border-color: var(--correct); background: var(--correct-bg); }
+.question-card.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
+
+.q-num {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.q-text {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+.q-text .blank {
+  display: inline-block;
+  min-width: 120px;
+  border-bottom: 2px dashed var(--text-muted);
+  margin: 0 2px;
+  text-align: center;
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+/* Multiple choice options */
+.options {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.option-btn {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.option-btn:hover:not(.chosen) {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+.option-btn.chosen {
+  pointer-events: none;
+}
+.option-btn.chosen.right {
+  border-color: var(--correct);
+  background: var(--correct-bg);
+  color: var(--correct);
+}
+.option-btn.chosen.wrong-choice {
+  border-color: var(--wrong);
+  background: var(--wrong-bg);
+  color: var(--wrong);
+  text-decoration: line-through;
+}
+.option-btn.show-correct {
+  border-color: var(--correct);
+  color: var(--correct);
+  border-style: dashed;
+}
+
+/* Gap fill input */
+.gap-input {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: inherit;
+  width: 180px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.gap-input:focus { border-color: var(--accent); }
+.gap-input.correct-input { border-color: var(--correct); color: var(--correct); }
+.gap-input.wrong-input { border-color: var(--wrong); color: var(--wrong); }
+
+.check-btn {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  margin-left: 8px;
+  transition: all 0.2s;
+}
+.check-btn:hover { background: var(--accent-light); }
+.check-btn:disabled { opacity: 0.4; cursor: default; }
+
+.gap-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+/* Explanation */
+.explanation {
+  display: none;
+  margin-top: 0.8rem;
+  padding: 0.8rem 1rem;
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease;
+}
+.explanation.show { display: block; }
+.explanation strong { color: var(--accent-light); }
+
+/* Word bank */
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.2rem;
+}
+.word-bank .word {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--accent-light);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Context paragraph */
+.context-para {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 2;
+  color: var(--text);
+}
+.context-para .gap-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+.context-para .filled-answer {
+  color: var(--accent-light);
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+/* Completion banner */
+.completion-banner {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--surface), var(--card));
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  margin-top: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+.completion-banner.show { display: block; }
+.completion-banner h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: var(--accent-light);
+  margin-bottom: 0.5rem;
+}
+.completion-banner p { color: var(--text-dim); }
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(6px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+@media (max-width:600px) {
+  .header h1 { font-size:1.6rem; }
+  .options { flex-direction: column; }
+  .gap-input { width: 140px; }
+  .container { padding: 1rem 1rem 3rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="badge">Cambridge Grammar for IELTS · Unit 1</div>
+    <h1>Present Simple, Present Continuous &amp; State Verbs</h1>
+    <div class="subtitle">Interactive exercises — choose or type your answer, then check</div>
+  </div>
+
+  <div class="score-bar">
+    <div class="score-text"><strong id="scoreNum">0</strong> / <span id="totalNum">13</span></div>
+    <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+    <button class="reset-btn" onclick="resetAll()">Reset</button>
+  </div>
+
+  <!-- ═══════ EXERCISE 1 ═══════ -->
+  <div class="exercise-section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Grammar Focus Task</h2>
+    </div>
+    <p class="instructions">Choose the correct verb form in each sentence.</p>
+
+    <div class="question-card" id="q1">
+      <div class="q-num">Question 1</div>
+      <div class="q-text">I <span class="blank">______</span> to do some sports activities.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q1','wrong')">&#x2019;m wanting</button>
+        <button class="option-btn" onclick="checkMC(this,'q1','right')">want</button>
+      </div>
+      <div class="explanation" id="exp-q1"><strong>"Want"</strong> is a state verb (expressing feeling/desire) and is <strong>not normally used in the continuous form</strong>. State verbs describe states, not actions — so we use the present simple.</div>
+    </div>
+
+    <div class="question-card" id="q2">
+      <div class="q-num">Question 2</div>
+      <div class="q-text">Our tennis team <span class="blank">______</span> for new people.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q2','right')">are always looking</button>
+        <button class="option-btn" onclick="checkMC(this,'q2','wrong')">always look</button>
+      </div>
+      <div class="explanation" id="exp-q2">The <strong>present continuous + "always"</strong> emphasises an ongoing, continuous process or repeated situation. It often conveys that the action is characteristic or notable — here, the team is <strong>constantly</strong> seeking new members.</div>
+    </div>
+
+    <div class="question-card" id="q3">
+      <div class="q-num">Question 3</div>
+      <div class="q-text"><span class="blank">______</span> pay to use the pools?</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q3','wrong')">Are you often having to</button>
+        <button class="option-btn" onclick="checkMC(this,'q3','right')">Do you often have to</button>
+      </div>
+      <div class="explanation" id="exp-q3"><strong>"Often"</strong> signals a regular habit or general frequency, which requires the <strong>present simple</strong>. "Have to" here expresses necessity as a general fact, not a temporary situation.</div>
+    </div>
+
+    <div class="question-card" id="q4">
+      <div class="q-num">Question 4</div>
+      <div class="q-text">We <span class="blank">______</span> anyone to book the swimming lanes or the gym equipment.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q4','wrong')">&#x2019;re not normally allowing</button>
+        <button class="option-btn" onclick="checkMC(this,'q4','right')">don't normally allow</button>
+      </div>
+      <div class="explanation" id="exp-q4"><strong>"Normally"</strong> shows this is a routine or general rule. General rules and policies take the <strong>present simple</strong> — not the continuous. Think of it as: this is always the case, not just right now.</div>
+    </div>
+
+    <div class="question-card" id="q5">
+      <div class="q-num">Question 5</div>
+      <div class="q-text">What time <span class="blank">______</span> you?</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q5','wrong')">is suiting</button>
+        <button class="option-btn" onclick="checkMC(this,'q5','right')">suits</button>
+      </div>
+      <div class="explanation" id="exp-q5"><strong>"Suit"</strong> describes a factual state or description — it's a <strong>state verb</strong> here (similar to "fit" or "match"). State verbs take the <strong>present simple</strong>, not the continuous.</div>
+    </div>
+
+    <div class="question-card" id="q6">
+      <div class="q-num">Question 6</div>
+      <div class="q-text">Great, well, I <span class="blank">______</span> that's everything.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q6','wrong')">&#x2019;m thinking</button>
+        <button class="option-btn" onclick="checkMC(this,'q6','right')">think</button>
+      </div>
+      <div class="explanation" id="exp-q6">When <strong>"think"</strong> expresses an <strong>opinion or belief</strong>, it acts as a state verb → <strong>present simple</strong>. You only use the continuous form ("I'm thinking about…") when describing the temporary action of <strong>pondering or considering</strong> something right now.</div>
+    </div>
+  </div>
+
+  <!-- ═══════ EXERCISE 2 ═══════ -->
+  <div class="exercise-section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Present Tense Gap-Fill</h2>
+    </div>
+    <p class="instructions">Type the correct present tense form (Present Simple or Present Continuous) of the verb shown. The first one is done for you.</p>
+
+    <div class="word-bank">
+      <span class="word">agree</span>
+      <span class="word">catch up</span>
+      <span class="word">cause</span>
+      <span class="word">have</span>
+      <span class="word">go up</span>
+      <span class="word">know</span>
+      <span class="word">think</span>
+      <span class="word">use</span>
+    </div>
+
+    <div class="context-para">
+      "We <span class="gap-num">1</span> <span class="filled-answer">use</span> energy for three main things: electricity production, heating and transport. For the first two, we <span class="gap-num">2</span> <span id="gap2-display" class="blank">______</span> options such as solar and wind power, or natural gas. But oil is still the world's number one source of energy, and for transport at least, there is currently no alternative. In China, domestic energy consumption <span class="gap-num">3</span> <span id="gap3-display" class="blank">______</span> year by year and demand in similar regions <span class="gap-num">4</span> <span id="gap4-display" class="blank">______</span> fast. We <span class="gap-num">5</span> <span id="gap5-display" class="blank">______</span> how to use energy more efficiently now than in the past but the worldwide rise in demand <span class="gap-num">6</span> <span id="gap6-display" class="blank">______</span> current supply to expand. Some experts <span class="gap-num">7</span> <span id="gap7-display" class="blank">______</span> that we need to find a new source of energy soon."
+    </div>
+
+    <div class="question-card" id="q7">
+      <div class="q-num">Gap 2 — verb: have</div>
+      <div class="gap-row">
+        <input class="gap-input" id="input-q7" type="text" placeholder="Type answer…" autocomplete="off">
+        <button class="check-btn" id="btn-q7" onclick="checkGap('q7','have',['have'],'gap2-display')">Check</button>
+      </div>
+      <div class="explanation" id="exp-q7"><strong>"Have"</strong> here means <strong>possession</strong> (we possess options) — it's a <strong>state verb</strong>, so it takes the <strong>present simple</strong>. We don't say "we are having options."</div>
+    </div>
+
+    <div class="question-card" id="q8">
+      <div class="q-num">Gap 3 — verb: go up</div>
+      <div class="gap-row">
+        <input class="gap-input" id="input-q8" type="text" placeholder="Type answer…" autocomplete="off">
+        <button class="check-btn" id="btn-q8" onclick="checkGap('q8','is going up',['is going up'],'gap3-display')">Check</button>
+      </div>
+      <div class="explanation" id="exp-q8"><strong>"Is going up"</strong> — the phrase <strong>"year by year"</strong> signals a <strong>changing, developing trend</strong> happening right now and continuing. This requires the <strong>present continuous</strong>, which we use for situations that are currently changing or in progress.</div>
+    </div>
+
+    <div class="question-card" id="q9">
+      <div class="q-num">Gap 4 — verb: catch up</div>
+      <div class="gap-row">
+        <input class="gap-input" id="input-q9" type="text" placeholder="Type answer…" autocomplete="off">
+        <button class="check-btn" id="btn-q9" onclick="checkGap('q9','is catching up',['is catching up'],'gap4-display')">Check</button>
+      </div>
+      <div class="explanation" id="exp-q9"><strong>"Is catching up"</strong> — demand is <strong>currently in the process</strong> of catching up, and "fast" emphasises this is an <strong>ongoing, developing trend</strong>. Present continuous is used for <strong>changes happening now</strong>.</div>
+    </div>
+
+    <div class="question-card" id="q10">
+      <div class="q-num">Gap 5 — verb: know</div>
+      <div class="gap-row">
+        <input class="gap-input" id="input-q10" type="text" placeholder="Type answer…" autocomplete="off">
+        <button class="check-btn" id="btn-q10" onclick="checkGap('q10','know',['know'],'gap5-display')">Check</button>
+      </div>
+      <div class="explanation" id="exp-q10"><strong>"Know"</strong> is a <strong>state verb</strong> describing thought and knowledge — it's <strong>never used in the continuous form</strong> in standard English. We say "we know" (present simple), not "we are knowing."</div>
+    </div>
+
+    <div class="question-card" id="q11">
+      <div class="q-num">Gap 6 — verb: cause</div>
+      <div class="gap-row">
+        <input class="gap-input" id="input-q11" type="text" placeholder="Type answer…" autocomplete="off">
+        <button class="check-btn" id="btn-q11" onclick="checkGap('q11','is causing',['is causing'],'gap6-display')">Check</button>
+      </div>
+      <div class="explanation" id="exp-q11"><strong>"Is causing"</strong> — the worldwide rise in demand is <strong>currently and actively</strong> causing supply to expand. This is a <strong>situation that is changing right now</strong>, so we use the <strong>present continuous</strong>.</div>
+    </div>
+
+    <div class="question-card" id="q12">
+      <div class="q-num">Gap 7 — verb: agree (or think)</div>
+      <div class="gap-row">
+        <input class="gap-input" id="input-q12" type="text" placeholder="Type answer…" autocomplete="off">
+        <button class="check-btn" id="btn-q12" onclick="checkGap('q12','agree',['agree','think'],'gap7-display')">Check</button>
+      </div>
+      <div class="explanation" id="exp-q12">Both <strong>"agree"</strong> and <strong>"think"</strong> are acceptable here. Both are <strong>state verbs</strong> expressing an opinion or shared belief — so they take the <strong>present simple</strong>. "Some experts agree / think that…" states a general position, not a temporary action.</div>
+    </div>
+  </div>
+
+  <div class="completion-banner" id="completionBanner">
+    <h3>🎉 Excellent work!</h3>
+    <p>You've completed all exercises for Unit 1: Present Simple, Present Continuous & State Verbs.</p>
+  </div>
+
+</div>
+
+<script>
+let score = 0;
+const total = 12; // q1-q6 (MC) + q7-q12 (gap fill) = 12 scored questions
+const answered = new Set();
+
+function updateScore() {
+  document.getElementById('scoreNum').textContent = score;
+  document.getElementById('totalNum').textContent = total;
+  document.getElementById('progressFill').style.width = (score/total*100)+'%';
+  if (answered.size >= total) {
+    document.getElementById('completionBanner').classList.add('show');
+  }
+}
+
+function checkMC(btn, qId, result) {
+  if (answered.has(qId)) return;
+  answered.add(qId);
+  const card = document.getElementById(qId);
+  const buttons = card.querySelectorAll('.option-btn');
+
+  buttons.forEach(b => b.classList.add('chosen'));
+
+  if (result === 'right') {
+    btn.classList.add('right');
+    card.classList.add('correct');
+    score++;
+  } else {
+    btn.classList.add('wrong-choice');
+    card.classList.add('wrong');
+    // Highlight the correct one
+    buttons.forEach(b => {
+      if (b !== btn) b.classList.add('show-correct');
+    });
+  }
+  document.getElementById('exp-'+qId).classList.add('show');
+  updateScore();
+}
+
+function checkGap(qId, correctAnswer, acceptableAnswers, displayId) {
+  if (answered.has(qId)) return;
+  const input = document.getElementById('input-'+qId);
+  const btn = document.getElementById('btn-'+qId);
+  const userAnswer = input.value.trim().toLowerCase();
+
+  if (!userAnswer) return;
+
+  answered.add(qId);
+  btn.disabled = true;
+  input.readOnly = true;
+
+  const card = document.getElementById(qId);
+  const isCorrect = acceptableAnswers.some(a => a.toLowerCase() === userAnswer);
+
+  if (isCorrect) {
+    input.classList.add('correct-input');
+    card.classList.add('correct');
+    score++;
+    if (displayId) {
+      const el = document.getElementById(displayId);
+      el.textContent = userAnswer;
+      el.classList.remove('blank');
+      el.classList.add('filled-answer');
+    }
+  } else {
+    input.classList.add('wrong-input');
+    card.classList.add('wrong');
+    // Show correct answer
+    input.value = userAnswer + '  →  ' + correctAnswer;
+    if (displayId) {
+      const el = document.getElementById(displayId);
+      el.textContent = correctAnswer;
+      el.classList.remove('blank');
+      el.classList.add('filled-answer');
+    }
+  }
+  document.getElementById('exp-'+qId).classList.add('show');
+  updateScore();
+}
+
+function resetAll() {
+  score = 0;
+  answered.clear();
+
+  // Reset MC questions
+  for (let i = 1; i <= 6; i++) {
+    const qId = 'q'+i;
+    const card = document.getElementById(qId);
+    card.classList.remove('correct','wrong');
+    card.querySelectorAll('.option-btn').forEach(b => {
+      b.classList.remove('chosen','right','wrong-choice','show-correct');
+    });
+    document.getElementById('exp-'+qId).classList.remove('show');
+  }
+
+  // Reset gap fills
+  for (let i = 7; i <= 12; i++) {
+    const qId = 'q'+i;
+    const card = document.getElementById(qId);
+    card.classList.remove('correct','wrong');
+    const input = document.getElementById('input-'+qId);
+    input.value = '';
+    input.readOnly = false;
+    input.classList.remove('correct-input','wrong-input');
+    document.getElementById('btn-'+qId).disabled = false;
+    document.getElementById('exp-'+qId).classList.remove('show');
+  }
+
+  // Reset display spans
+  ['gap2','gap3','gap4','gap5','gap6','gap7'].forEach(g => {
+    const el = document.getElementById(g+'-display');
+    if (el) {
+      el.textContent = '______';
+      el.classList.add('blank');
+      el.classList.remove('filled-answer');
+    }
+  });
+
+  document.getElementById('completionBanner').classList.remove('show');
+  updateScore();
+}
+
+// Allow Enter key to submit gap fills
+document.querySelectorAll('.gap-input').forEach(input => {
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      const btn = input.parentElement.querySelector('.check-btn');
+      if (btn && !btn.disabled) btn.click();
+    }
+  });
+});
+</script>
+</body>
+</html>
