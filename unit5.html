@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Grammar — Unit 5: Future Forms Exercise</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F6FA;--surface:#FFF;--card:#FFF;--accent:#1A5C9E;--accent2:#2878C8;--accent-light:#D6E8F8;--accent-glow:rgba(26,92,158,0.06);--correct:#2D7A3A;--correct-bg:#E8F5EC;--correct-border:#4CAF6A;--wrong:#C0392B;--wrong-bg:#FDECEB;--wrong-border:#E74C3C;--text:#1A2B3C;--text-dim:#5A6E80;--text-muted:#8A9CB0;--border:#D0DCE8;--border-dark:#B0C4D8;--radius:14px;--radius-sm:8px;--shadow:0 2px 12px rgba(26,43,60,0.06)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65}
+.container{max-width:780px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.header{text-align:center;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:2px solid var(--border)}
+.header .badge{display:inline-block;background:var(--accent);color:#FFF;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;padding:5px 16px;border-radius:4px;margin-bottom:1.2rem}
+.header h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--text);margin-bottom:.3rem}
+.header .subtitle{font-size:.95rem;color:var(--text-dim)}
+.score-bar{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1.2rem;margin-bottom:2rem;position:sticky;top:.5rem;z-index:100;box-shadow:var(--shadow)}
+.score-bar .score-text{font-size:.85rem;color:var(--text-dim)}.score-bar .score-text strong{color:var(--accent);font-size:1.15rem}
+.score-bar .progress-wrap{flex:1;margin:0 1rem;height:6px;background:var(--accent-light);border-radius:3px;overflow:hidden}
+.score-bar .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;transition:width .5s ease}
+.score-bar .reset-btn{background:none;border:1.5px solid var(--border-dark);color:var(--text-dim);font-size:.75rem;padding:4px 14px;border-radius:20px;cursor:pointer;font-family:inherit;font-weight:600;transition:all .2s}
+.score-bar .reset-btn:hover{border-color:var(--accent);color:var(--accent)}
+.back-link{display:inline-block;margin-bottom:1.5rem;color:var(--accent);text-decoration:none;font-size:.9rem;font-weight:600}
+.back-link:hover{text-decoration:underline}
+.exercise-section{margin-bottom:2.8rem}
+.section-header{display:flex;align-items:center;gap:.8rem;margin-bottom:.3rem}
+.section-num{width:38px;height:38px;background:var(--accent);color:#FFF;font-weight:700;font-size:1rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.exercise-section h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text)}
+.instructions{color:var(--text-dim);font-size:.9rem;margin-bottom:1rem;padding-left:3.3rem}
+.question-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;margin-bottom:.8rem;transition:all .3s;box-shadow:var(--shadow)}
+.question-card.correct{border-color:var(--correct-border);background:var(--correct-bg)}
+.question-card.wrong{border-color:var(--wrong-border);background:var(--wrong-bg)}
+.q-num{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.5rem;font-weight:700}
+.q-text{font-size:1rem;color:var(--text);margin-bottom:.8rem;line-height:1.75}
+.q-text .blank{display:inline-block;min-width:130px;border-bottom:2px dashed var(--text-muted);margin:0 3px;text-align:center;color:var(--accent);font-weight:600}
+.q-text .context{font-size:.85rem;color:var(--text-dim);font-style:italic;display:block;margin-top:.3rem}
+.options{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.5rem}
+.option-btn{background:var(--bg);border:1.5px solid var(--border-dark);color:var(--text);padding:8px 18px;border-radius:var(--radius-sm);cursor:pointer;font-size:.88rem;font-family:inherit;font-weight:600;transition:all .2s}
+.option-btn:hover:not(.chosen){border-color:var(--accent);background:var(--accent-glow);color:var(--accent)}
+.option-btn.chosen{pointer-events:none}
+.option-btn.chosen.right{border-color:var(--correct-border);background:var(--correct-bg);color:var(--correct)}
+.option-btn.chosen.wrong-choice{border-color:var(--wrong-border);background:var(--wrong-bg);color:var(--wrong);text-decoration:line-through}
+.option-btn.show-correct{border-color:var(--correct-border);color:var(--correct);border-style:dashed}
+.explanation{display:none;margin-top:.8rem;padding:.8rem 1rem;background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:.85rem;color:var(--text-dim);line-height:1.65;animation:fadeIn .3s ease}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+.tip-box{background:var(--accent-light);border:1px solid var(--accent);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.2rem;font-size:.85rem;color:var(--accent);line-height:1.6}
+.tip-box strong{color:var(--text)}
+.completion-banner{display:none;text-align:center;padding:2rem;background:var(--surface);border:2px solid var(--accent);border-radius:var(--radius);margin-top:2rem;box-shadow:0 8px 30px rgba(26,43,60,0.08);animation:fadeIn .5s ease}
+.completion-banner.show{display:block}
+.completion-banner h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--accent);margin-bottom:.5rem}
+.completion-banner p{color:var(--text-dim)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.header h1{font-size:1.5rem}.options{flex-direction:column}.container{padding:1.2rem 1rem 3rem}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <a href="index.html" class="back-link">← Back to exercises</a>
+
+  <div class="header">
+    <div class="badge">Cambridge Grammar for IELTS · Unit 5</div>
+    <h1>Future 1: <em>will</em>, <em>going to</em> &amp; Present Continuous</h1>
+    <div class="subtitle">Interactive exercises — choose the correct future form and check your understanding</div>
+  </div>
+
+  <div class="score-bar">
+    <div class="score-text"><strong id="scoreNum">0</strong> / <span id="totalNum">12</span></div>
+    <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+    <button class="reset-btn" onclick="resetAll()">Reset</button>
+  </div>
+
+  <!-- ═══════ EXERCISE 1: Which future form? ═══════ -->
+  <div class="exercise-section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Which Future Form?</h2>
+    </div>
+    <p class="instructions">Choose the correct future form based on the context.</p>
+
+    <div class="tip-box">
+      <strong>Quick Guide:</strong><br>
+      • <strong>Present Continuous</strong> → definite arrangements already made (booked, organised, confirmed)<br>
+      • <strong>Going to</strong> → plans/intentions already decided (but maybe not arranged yet) + predictions from present evidence<br>
+      • <strong>Will</strong> → predictions based on opinion/experience + spontaneous decisions + offers/promises + facts about the future
+    </div>
+
+    <div class="question-card" id="q1">
+      <div class="q-num">Question 1</div>
+      <div class="q-text">We <span class="blank">______</span> in a small hotel near the beach. We booked it last week. <span class="context">(a definite arrangement already made)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q1','right')">&#x2019;re staying</button>
+        <button class="option-btn" onclick="checkMC(this,'q1','wrong')">&#x2019;ll stay</button>
+        <button class="option-btn" onclick="checkMC(this,'q1','wrong')">&#x2019;re going to stay</button>
+      </div>
+      <div class="explanation" id="exp-q1"><strong>Present continuous</strong> — the hotel is already booked, so this is a <strong>definite arrangement</strong>. We use the present continuous for future plans where specific arrangements have been made (time, place, bookings confirmed).</div>
+    </div>
+
+    <div class="question-card" id="q2">
+      <div class="q-num">Question 2</div>
+      <div class="q-text">I think it <span class="blank">______</span> extremely hot there. <span class="context">(a prediction based on what you think/believe)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q2','wrong')">&#x2019;s being</button>
+        <button class="option-btn" onclick="checkMC(this,'q2','right')">&#x2019;ll be</button>
+        <button class="option-btn" onclick="checkMC(this,'q2','wrong')">&#x2019;s going to be</button>
+      </div>
+      <div class="explanation" id="exp-q2"><strong>Will</strong> — "I think" signals a <strong>prediction based on opinion or past experience</strong>, not on present evidence. We use <em>will</em> for predictions that come from what we think, believe, or expect. (<em>Going to</em> would be used if we could SEE evidence right now.)</div>
+    </div>
+
+    <div class="question-card" id="q3">
+      <div class="q-num">Question 3</div>
+      <div class="q-text">We <span class="blank">______</span> a bus to get around the island. That's our plan. <span class="context">(a plan/intention already decided but not yet arranged)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q3','wrong')">&#x2019;ll hire</button>
+        <button class="option-btn" onclick="checkMC(this,'q3','right')">&#x2019;re going to hire</button>
+        <button class="option-btn" onclick="checkMC(this,'q3','wrong')">&#x2019;re hiring</button>
+      </div>
+      <div class="explanation" id="exp-q3"><strong>Going to</strong> — they've already thought about it and decided ("that's our plan"), but they haven't made the actual arrangements yet (no booking). <em>Going to</em> expresses <strong>intentions and plans that have been decided</strong> but may not be fully arranged.</div>
+    </div>
+
+    <div class="question-card" id="q4">
+      <div class="q-num">Question 4</div>
+      <div class="q-text">A: "We need someone to collect the tickets." B: "Don't worry, I <span class="blank">______</span> them." <span class="context">(a spontaneous decision — decided at the moment of speaking)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q4','right')">&#x2019;ll collect</button>
+        <button class="option-btn" onclick="checkMC(this,'q4','wrong')">&#x2019;m collecting</button>
+        <button class="option-btn" onclick="checkMC(this,'q4','wrong')">&#x2019;m going to collect</button>
+      </div>
+      <div class="explanation" id="exp-q4"><strong>Will</strong> — this is a <strong>spontaneous decision</strong> made at the moment of speaking. The speaker hadn't planned this before — they just decided now. We also use <em>will</em> for <strong>offers and promises</strong>: "I'll help you", "I'll let you know."</div>
+    </div>
+
+    <div class="question-card" id="q5">
+      <div class="q-num">Question 5</div>
+      <div class="q-text">Look at those dark clouds! It <span class="blank">______</span>. <span class="context">(a prediction based on present evidence you can see)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q5','wrong')">&#x2019;ll rain</button>
+        <button class="option-btn" onclick="checkMC(this,'q5','right')">&#x2019;s going to rain</button>
+        <button class="option-btn" onclick="checkMC(this,'q5','wrong')">rains</button>
+      </div>
+      <div class="explanation" id="exp-q5"><strong>Going to</strong> — there is <strong>present evidence</strong> (dark clouds) that leads to this prediction. When we can see, hear, or feel something NOW that tells us what will happen, we use <em>going to</em>. Compare: "I think it'll rain tomorrow" (opinion, no evidence → <em>will</em>).</div>
+    </div>
+
+    <div class="question-card" id="q6">
+      <div class="q-num">Question 6</div>
+      <div class="q-text">The manager <span class="blank">______</span> a party just after we get back. <span class="context">(a scheduled/organised event with a future time expression)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q6','right')">is having</button>
+        <button class="option-btn" onclick="checkMC(this,'q6','wrong')">will have</button>
+        <button class="option-btn" onclick="checkMC(this,'q6','wrong')">has</button>
+      </div>
+      <div class="explanation" id="exp-q6"><strong>Present continuous</strong> — this is a <strong>definite arrangement</strong> that has been organised. The time expression ("just after we get back") and the fact that it's a party (which requires planning) tell us arrangements have been made.</div>
+    </div>
+  </div>
+
+  <!-- ═══════ EXERCISE 2: Will vs Going to — Key Distinctions ═══════ -->
+  <div class="exercise-section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2><em>Will</em> vs <em>Going to</em> — Key Distinctions</h2>
+    </div>
+    <p class="instructions">Focus on the difference between <em>will</em> and <em>going to</em>.</p>
+
+    <div class="question-card" id="q7">
+      <div class="q-num">Question 7</div>
+      <div class="q-text">The best player on the tour <span class="blank">______</span> a special trophy. <span class="context">(a future fact — not personal, not a plan)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q7','right')">will get</button>
+        <button class="option-btn" onclick="checkMC(this,'q7','wrong')">is going to get</button>
+      </div>
+      <div class="explanation" id="exp-q7"><strong>Will</strong> — this is a <strong>future fact or event that is not personal</strong>. We use <em>will</em> to talk about future events that are general facts, official arrangements, or scheduled events that are not about personal plans. "The prime minister will open the debate tomorrow" follows the same pattern.</div>
+    </div>
+
+    <div class="question-card" id="q8">
+      <div class="q-num">Question 8</div>
+      <div class="q-text">We've decided — we <span class="blank">______</span> a boat to a couple of the islands. <span class="context">(a decision already made before now)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q8','wrong')">&#x2019;ll get</button>
+        <button class="option-btn" onclick="checkMC(this,'q8','right')">&#x2019;re going to get</button>
+      </div>
+      <div class="explanation" id="exp-q8"><strong>Going to</strong> — "We've decided" tells us the decision was <strong>already made before now</strong>. <em>Going to</em> is for plans and intentions that have been thought about and decided. <em>Will</em> would suggest a spontaneous decision made right now.</div>
+    </div>
+
+    <div class="question-card" id="q9">
+      <div class="q-num">Question 9</div>
+      <div class="q-text">Tell me all about it and I <span class="blank">______</span> the information to the rest of the team. <span class="context">(a promise made right now)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q9','right')">&#x2019;ll pass on</button>
+        <button class="option-btn" onclick="checkMC(this,'q9','wrong')">&#x2019;m going to pass on</button>
+      </div>
+      <div class="explanation" id="exp-q9"><strong>Will</strong> — this is a <strong>promise</strong> being made at the moment of speaking. We use <em>will</em> for offers, promises, and spontaneous decisions: "I'll help you", "I'll let everyone know", "Don't worry, I'll do it."</div>
+    </div>
+
+    <div class="question-card" id="q10">
+      <div class="q-num">Question 10</div>
+      <div class="q-text">Well, looking at all our plans, we <span class="blank">______</span> a very varied trip! <span class="context">(a prediction based on what you can see/know — present evidence from the plans)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q10','wrong')">&#x2019;ll certainly have</button>
+        <button class="option-btn" onclick="checkMC(this,'q10','right')">&#x2019;re certainly going to have</button>
+      </div>
+      <div class="explanation" id="exp-q10"><strong>Going to</strong> — the speaker is looking at the plans (present evidence) and making a prediction based on what they can see. When we have <strong>evidence in front of us</strong> for a prediction, we use <em>going to</em>, not <em>will</em>.</div>
+    </div>
+
+    <div class="question-card" id="q11">
+      <div class="q-num">Question 11</div>
+      <div class="q-text">We <span class="blank">______</span> probably stay in some sort of mountain lodge there. <span class="context">(a prediction about future events not yet arranged — opinion)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q11','right')">&#x2019;ll</button>
+        <button class="option-btn" onclick="checkMC(this,'q11','wrong')">&#x2019;re going to</button>
+      </div>
+      <div class="explanation" id="exp-q11"><strong>Will</strong> — "probably" signals this is a <strong>prediction based on what the speaker thinks</strong>, not a definite plan. Nothing has been decided or arranged — the speaker is speculating. <em>Will</em> is used for predictions based on <strong>opinion, belief, or expectation</strong>.</div>
+    </div>
+
+    <div class="question-card" id="q12">
+      <div class="q-num">Question 12</div>
+      <div class="q-text">Your motives <span class="blank">______</span> you choose the best course for your aims and goals. <span class="context">(a general future fact — impersonal, always true)</span></div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q12','right')">will help</button>
+        <button class="option-btn" onclick="checkMC(this,'q12','wrong')">are going to help</button>
+        <button class="option-btn" onclick="checkMC(this,'q12','wrong')">are helping</button>
+      </div>
+      <div class="explanation" id="exp-q12"><strong>Will</strong> — this is a <strong>general future fact</strong> from an information guide — it's impersonal and true for everyone, not a personal plan or intention. We use <em>will</em> for future facts, general truths about the future, and impersonal statements.</div>
+    </div>
+  </div>
+
+  <div class="completion-banner" id="completionBanner">
+    <h3>🎉 Excellent work!</h3>
+    <p>You've completed all exercises for Unit 5: Future Forms — <em>will</em>, <em>going to</em> & Present Continuous for future.</p>
+  </div>
+
+</div>
+
+<script>
+let score=0;const total=12;const answered=new Set();
+function updateScore(){document.getElementById('scoreNum').textContent=score;document.getElementById('totalNum').textContent=total;document.getElementById('progressFill').style.width=(score/total*100)+'%';if(answered.size>=total)document.getElementById('completionBanner').classList.add('show');}
+function checkMC(btn,qId,result){if(answered.has(qId))return;answered.add(qId);const card=document.getElementById(qId);const buttons=card.querySelectorAll('.option-btn');buttons.forEach(b=>b.classList.add('chosen'));if(result==='right'){btn.classList.add('right');card.classList.add('correct');score++;}else{btn.classList.add('wrong-choice');card.classList.add('wrong');buttons.forEach(b=>{if(b!==btn&&b.getAttribute('onclick').includes("'right'"))b.classList.add('show-correct');});}document.getElementById('exp-'+qId).classList.add('show');updateScore();}
+function resetAll(){score=0;answered.clear();for(let i=1;i<=12;i++){const qId='q'+i;const card=document.getElementById(qId);card.classList.remove('correct','wrong');card.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('chosen','right','wrong-choice','show-correct');});document.getElementById('exp-'+qId).classList.remove('show');}document.getElementById('completionBanner').classList.remove('show');updateScore();}
+</script>
+</body>
+</html>
