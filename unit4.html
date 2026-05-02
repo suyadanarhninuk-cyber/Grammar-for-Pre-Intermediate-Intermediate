@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Grammar — Unit 4: Past Perfect Exercise</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F1EC;--surface:#FFF;--card:#FFF;--accent:#6B3FA0;--accent2:#8854C8;--accent-light:#EDE5F7;--accent-glow:rgba(107,63,160,0.06);--correct:#2D7A3A;--correct-bg:#E8F5EC;--correct-border:#4CAF6A;--wrong:#C0392B;--wrong-bg:#FDECEB;--wrong-border:#E74C3C;--text:#1E1230;--text-dim:#5A4E6A;--text-muted:#9088A0;--border:#DED6E8;--border-dark:#C8BCD8;--radius:14px;--radius-sm:8px;--shadow:0 2px 12px rgba(30,18,48,0.06);--shadow-lg:0 8px 30px rgba(30,18,48,0.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65}
+.container{max-width:780px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.header{text-align:center;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:2px solid var(--border)}
+.header .badge{display:inline-block;background:var(--accent);color:#FFF;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;padding:5px 16px;border-radius:4px;margin-bottom:1.2rem}
+.header h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--text);margin-bottom:.3rem;letter-spacing:-.5px}
+.header .subtitle{font-size:.95rem;color:var(--text-dim)}
+.score-bar{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1.2rem;margin-bottom:2rem;position:sticky;top:.5rem;z-index:100;box-shadow:var(--shadow)}
+.score-bar .score-text{font-size:.85rem;color:var(--text-dim)}.score-bar .score-text strong{color:var(--accent);font-size:1.15rem;font-weight:700}
+.score-bar .progress-wrap{flex:1;margin:0 1rem;height:6px;background:var(--accent-light);border-radius:3px;overflow:hidden}
+.score-bar .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;transition:width .5s ease}
+.score-bar .reset-btn{background:none;border:1.5px solid var(--border-dark);color:var(--text-dim);font-size:.75rem;padding:4px 14px;border-radius:20px;cursor:pointer;transition:all .2s;font-family:inherit;font-weight:600}
+.score-bar .reset-btn:hover{border-color:var(--accent);color:var(--accent)}
+.exercise-section{margin-bottom:2.8rem}
+.section-header{display:flex;align-items:center;gap:.8rem;margin-bottom:.3rem}
+.section-num{width:38px;height:38px;background:var(--accent);color:#FFF;font-weight:700;font-size:1rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.exercise-section h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text)}
+.instructions{color:var(--text-dim);font-size:.9rem;margin-bottom:1rem;padding-left:3.3rem}
+.question-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;margin-bottom:.8rem;transition:all .3s;box-shadow:var(--shadow)}
+.question-card.correct{border-color:var(--correct-border);background:var(--correct-bg)}
+.question-card.wrong{border-color:var(--wrong-border);background:var(--wrong-bg)}
+.q-num{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.5rem;font-weight:700}
+.q-text{font-size:1rem;color:var(--text);margin-bottom:.8rem;line-height:1.75}
+.q-text .blank{display:inline-block;min-width:130px;border-bottom:2px dashed var(--text-muted);margin:0 3px;text-align:center;color:var(--accent);font-weight:600}
+.options{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.5rem}
+.option-btn{background:var(--bg);border:1.5px solid var(--border-dark);color:var(--text);padding:8px 20px;border-radius:var(--radius-sm);cursor:pointer;font-size:.9rem;font-family:inherit;font-weight:600;transition:all .2s}
+.option-btn:hover:not(.chosen){border-color:var(--accent);background:var(--accent-glow);color:var(--accent)}
+.option-btn.chosen{pointer-events:none}
+.option-btn.chosen.right{border-color:var(--correct-border);background:var(--correct-bg);color:var(--correct)}
+.option-btn.chosen.wrong-choice{border-color:var(--wrong-border);background:var(--wrong-bg);color:var(--wrong);text-decoration:line-through}
+.option-btn.show-correct{border-color:var(--correct-border);color:var(--correct);border-style:dashed}
+.explanation{display:none;margin-top:.8rem;padding:.8rem 1rem;background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:.85rem;color:var(--text-dim);line-height:1.65;animation:fadeIn .3s ease}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+.tip-box{background:var(--accent-light);border:1px solid var(--accent);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.2rem;font-size:.88rem;color:var(--accent);line-height:1.6}
+.tip-box strong{color:var(--text)}
+.completion-banner{display:none;text-align:center;padding:2rem;background:var(--surface);border:2px solid var(--accent);border-radius:var(--radius);margin-top:2rem;box-shadow:var(--shadow-lg);animation:fadeIn .5s ease}
+.completion-banner.show{display:block}
+.completion-banner h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--accent);margin-bottom:.5rem}
+.completion-banner p{color:var(--text-dim);font-size:.95rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.header h1{font-size:1.5rem}.options{flex-direction:column}.container{padding:1.2rem 1rem 3rem}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="badge">Cambridge Grammar for IELTS · Unit 4</div>
+    <h1>Past Perfect Simple &amp; Past Perfect Continuous</h1>
+    <div class="subtitle">Interactive exercises — choose the correct form and check your understanding</div>
+  </div>
+
+  <div class="score-bar">
+    <div class="score-text"><strong id="scoreNum">0</strong> / <span id="totalNum">10</span></div>
+    <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+    <button class="reset-btn" onclick="resetAll()">Reset</button>
+  </div>
+
+  <!-- ═══════ EXERCISE 1: Past Perfect vs Past Simple ═══════ -->
+  <div class="exercise-section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Past Perfect or Past Simple?</h2>
+    </div>
+    <p class="instructions">Choose the correct tense for each sentence.</p>
+
+    <div class="tip-box">
+      <strong>Key rule:</strong> Use the <strong>past perfect</strong> (had + past participle) to show that one event happened <strong>BEFORE</strong> another event in the past. Use the <strong>past simple</strong> when events are in chronological order or there is only one past time frame.
+    </div>
+
+    <div class="question-card" id="q1">
+      <div class="q-num">Question 1</div>
+      <div class="q-text">When I got home, my husband <span class="blank">______</span> dinner. (= he cooked it BEFORE I arrived — it was ready)</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q1','right')">had cooked</button>
+        <button class="option-btn" onclick="checkMC(this,'q1','wrong')">cooked</button>
+      </div>
+      <div class="explanation" id="exp-q1">The cooking happened <strong>BEFORE</strong> the speaker arrived home. We use the <strong>past perfect</strong> to show the earlier event. Compare: "When I got home, my husband cooked dinner" = I arrived, THEN he cooked (chronological order → both past simple).</div>
+    </div>
+
+    <div class="question-card" id="q2">
+      <div class="q-num">Question 2</div>
+      <div class="q-text">His grandfather <span class="blank">______</span> a musician and his father was also a composer.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q2','right')">had also been</button>
+        <button class="option-btn" onclick="checkMC(this,'q2','wrong')">was also</button>
+      </div>
+      <div class="explanation" id="exp-q2">The grandfather's career as a musician happened <strong>earlier</strong> than the father's career as a composer. The <strong>past perfect</strong> shows the grandfather came first in time. The past simple ("his father was also a composer") is the later reference point.</div>
+    </div>
+
+    <div class="question-card" id="q3">
+      <div class="q-num">Question 3</div>
+      <div class="q-text">They travelled to Vienna and <span class="blank">______</span> sensational reports of Mozart's talent.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q3','wrong')">had heard</button>
+        <button class="option-btn" onclick="checkMC(this,'q3','right')">heard</button>
+      </div>
+      <div class="explanation" id="exp-q3">The events are in <strong>chronological order</strong>: first they travelled, then they heard. When events are listed in the order they happened, we use the <strong>past simple</strong> for both. The past perfect is only needed when the order is reversed.</div>
+    </div>
+
+    <div class="question-card" id="q4">
+      <div class="q-num">Question 4</div>
+      <div class="q-text">By the time he was 17, Mozart's reputation <span class="blank">______</span> to spread through Europe.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q4','right')">had already begun</button>
+        <button class="option-btn" onclick="checkMC(this,'q4','wrong')">already began</button>
+      </div>
+      <div class="explanation" id="exp-q4"><strong>"By the time"</strong> is a classic past perfect trigger. The reputation spreading started <strong>before</strong> he turned 17. <strong>"Already"</strong> goes between the auxiliary (had) and the main verb (begun): <strong>had already begun</strong>.</div>
+    </div>
+
+    <div class="question-card" id="q5">
+      <div class="q-num">Question 5</div>
+      <div class="q-text">When Mozart was born, five of his siblings <span class="blank">______</span> in infancy.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q5','right')">had already died</button>
+        <button class="option-btn" onclick="checkMC(this,'q5','wrong')">already died</button>
+      </div>
+      <div class="explanation" id="exp-q5">The siblings died <strong>before</strong> Mozart was born. <strong>"When"</strong> + past simple gives the reference point, and the <strong>past perfect</strong> shows what happened even earlier. This is the classic pattern: <strong>when + past simple, past perfect</strong>.</div>
+    </div>
+
+    <div class="question-card" id="q6">
+      <div class="q-num">Question 6</div>
+      <div class="q-text">His family were richer than they <span class="blank">______</span> before.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q6','right')">had ever been</button>
+        <button class="option-btn" onclick="checkMC(this,'q6','wrong')">were ever</button>
+      </div>
+      <div class="explanation" id="exp-q6">We're comparing their wealth at one point in the past with <strong>any time before that point</strong>. The past perfect with <strong>"ever"</strong> and <strong>"before"</strong> shows the earlier reference. This is like the present perfect's "have you ever…" but shifted back to the past.</div>
+    </div>
+  </div>
+
+  <!-- ═══════ EXERCISE 2: Past Perfect Simple vs Continuous ═══════ -->
+  <div class="exercise-section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Past Perfect Simple or Continuous?</h2>
+    </div>
+    <p class="instructions">Choose the best form based on what the speaker wants to emphasise.</p>
+
+    <div class="tip-box">
+      <strong>Key difference:</strong><br>
+      • <strong>Past perfect continuous</strong> (had been + -ing) → emphasises <strong>HOW LONG</strong> or the <strong>activity itself</strong> leading up to a past moment<br>
+      • <strong>Past perfect simple</strong> (had + pp) → emphasises the <strong>RESULT</strong> or <strong>COMPLETION</strong> before a past moment<br>
+      • <strong>State verbs</strong> → always use the simple form (had known, NOT had been knowing)
+    </div>
+
+    <div class="question-card" id="q7">
+      <div class="q-num">Question 7</div>
+      <div class="q-text">Times were hard and the family <span class="blank">______</span> for some time. (focus: how long the struggle lasted)</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q7','wrong')">had struggled</button>
+        <button class="option-btn" onclick="checkMC(this,'q7','right')">had been struggling</button>
+      </div>
+      <div class="explanation" id="exp-q7">The focus is on <strong>how long</strong> the activity continued ("for some time"). The <strong>past perfect continuous</strong> emphasises the <strong>duration and ongoing nature</strong> of the struggle leading up to that point in the past.</div>
+    </div>
+
+    <div class="question-card" id="q8">
+      <div class="q-num">Question 8</div>
+      <div class="q-text">By the time he was six, the little boy <span class="blank">______</span> a composition of his own. (focus: completed result)</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q8','right')">had written</button>
+        <button class="option-btn" onclick="checkMC(this,'q8','wrong')">had been writing</button>
+      </div>
+      <div class="explanation" id="exp-q8">The focus is on the <strong>completed result</strong> — the composition was finished. The <strong>past perfect simple</strong> emphasises that the action was <strong>complete</strong> before the past reference point (age six). "Had been writing" would suggest the process was still ongoing.</div>
+    </div>
+
+    <div class="question-card" id="q9">
+      <div class="q-num">Question 9</div>
+      <div class="q-text">I knew the way because I <span class="blank">______</span> her several times before.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q9','right')">had visited</button>
+        <button class="option-btn" onclick="checkMC(this,'q9','wrong')">had been visiting</button>
+      </div>
+      <div class="explanation" id="exp-q9"><strong>"Several times"</strong> counts the number of visits — this is about <strong>how many</strong>, not how long. We <strong>cannot use the past perfect continuous</strong> to say how many times something happened. Use the <strong>past perfect simple</strong> for counting completed actions.</div>
+    </div>
+
+    <div class="question-card" id="q10">
+      <div class="q-num">Question 10</div>
+      <div class="q-text">The politician <span class="blank">______</span> to be re-elected, but in the end she only got ten per cent of the vote.</div>
+      <div class="options">
+        <button class="option-btn" onclick="checkMC(this,'q10','right')">had expected</button>
+        <button class="option-btn" onclick="checkMC(this,'q10','wrong')">had been expecting</button>
+      </div>
+      <div class="explanation" id="exp-q10">This describes an <strong>unfulfilled hope</strong> — something that was expected but didn't happen. We use the <strong>past perfect simple</strong> with verbs like <strong>expected, hoped, wanted, planned, intended</strong> to express <strong>past disappointments</strong>. Note: "had been hoping" is also possible here for emphasis on the ongoing nature of the hope, but "had expected" is the standard form for unfulfilled expectations.</div>
+    </div>
+  </div>
+
+  <div class="completion-banner" id="completionBanner">
+    <h3>🎉 Excellent work!</h3>
+    <p>You've completed all exercises for Unit 4: Past Perfect Simple & Past Perfect Continuous.</p>
+  </div>
+
+</div>
+
+<script>
+let score=0;const total=10;const answered=new Set();
+function updateScore(){document.getElementById('scoreNum').textContent=score;document.getElementById('totalNum').textContent=total;document.getElementById('progressFill').style.width=(score/total*100)+'%';if(answered.size>=total)document.getElementById('completionBanner').classList.add('show');}
+function checkMC(btn,qId,result){if(answered.has(qId))return;answered.add(qId);const card=document.getElementById(qId);const buttons=card.querySelectorAll('.option-btn');buttons.forEach(b=>b.classList.add('chosen'));if(result==='right'){btn.classList.add('right');card.classList.add('correct');score++;}else{btn.classList.add('wrong-choice');card.classList.add('wrong');buttons.forEach(b=>{if(b!==btn)b.classList.add('show-correct');});}document.getElementById('exp-'+qId).classList.add('show');updateScore();}
+function resetAll(){score=0;answered.clear();for(let i=1;i<=10;i++){const qId='q'+i;const card=document.getElementById(qId);card.classList.remove('correct','wrong');card.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('chosen','right','wrong-choice','show-correct');});document.getElementById('exp-'+qId).classList.remove('show');}document.getElementById('completionBanner').classList.remove('show');updateScore();}
+</script>
+</body>
+</html>
