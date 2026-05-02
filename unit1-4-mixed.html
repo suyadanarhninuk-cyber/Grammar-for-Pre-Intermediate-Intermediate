@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Grammar — Units 1–4: Mixed Tenses Exercise</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1420;--surface:#161E2E;--card:#1C2640;--accent:#C9880A;--accent-light:#F5D98A;--accent-glow:rgba(201,136,10,0.12);--correct:#2ECC71;--correct-bg:rgba(46,204,113,0.1);--correct-border:#2ECC71;--wrong:#E74C3C;--wrong-bg:rgba(231,76,60,0.1);--wrong-border:#E74C3C;--text:#E8EFF5;--text-dim:#8A99B2;--text-muted:#5A6A82;--border:#2A3650;--radius:14px;--radius-sm:8px;--shadow:0 2px 12px rgba(0,0,0,0.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65}
+.container{max-width:780px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.header{text-align:center;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.header .badge{display:inline-block;background:var(--accent);color:var(--bg);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;padding:5px 16px;border-radius:4px;margin-bottom:1.2rem}
+.header h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--text);margin-bottom:.3rem}
+.header .subtitle{font-size:.95rem;color:var(--text-dim)}
+.score-bar{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1.2rem;margin-bottom:2rem;position:sticky;top:.5rem;z-index:100}
+.score-bar .score-text{font-size:.85rem;color:var(--text-dim)}.score-bar .score-text strong{color:var(--accent-light);font-size:1.15rem}
+.score-bar .progress-wrap{flex:1;margin:0 1rem;height:6px;background:var(--card);border-radius:3px;overflow:hidden}
+.score-bar .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-light));border-radius:3px;transition:width .5s ease}
+.score-bar .reset-btn{background:none;border:1px solid var(--border);color:var(--text-dim);font-size:.75rem;padding:4px 14px;border-radius:20px;cursor:pointer;font-family:inherit;font-weight:600;transition:all .2s}
+.score-bar .reset-btn:hover{border-color:var(--accent);color:var(--accent-light)}
+.back-link{display:inline-block;margin-bottom:1.5rem;color:var(--accent-light);text-decoration:none;font-size:.9rem;font-weight:600}
+.back-link:hover{text-decoration:underline}
+.question-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;margin-bottom:.8rem;transition:all .3s;box-shadow:var(--shadow)}
+.question-card.correct{border-color:var(--correct-border);background:var(--correct-bg)}
+.question-card.wrong{border-color:var(--wrong-border);background:var(--wrong-bg)}
+.q-num{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.5rem;font-weight:700}
+.q-text{font-size:1rem;color:var(--text);margin-bottom:.8rem;line-height:1.75}
+.q-text .blank{display:inline-block;min-width:140px;border-bottom:2px dashed var(--text-muted);margin:0 3px;text-align:center;color:var(--accent-light);font-weight:600}
+.q-text .context{font-size:.85rem;color:var(--text-dim);font-style:italic;display:block;margin-top:.3rem}
+.options{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.option-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--text);padding:7px 16px;border-radius:var(--radius-sm);cursor:pointer;font-size:.88rem;font-family:inherit;font-weight:600;transition:all .2s}
+.option-btn:hover:not(.chosen){border-color:var(--accent);background:var(--accent-glow)}
+.option-btn.chosen{pointer-events:none}
+.option-btn.chosen.right{border-color:var(--correct);background:var(--correct-bg);color:var(--correct)}
+.option-btn.chosen.wrong-choice{border-color:var(--wrong);background:var(--wrong-bg);color:var(--wrong);text-decoration:line-through}
+.option-btn.show-correct{border-color:var(--correct);color:var(--correct);border-style:dashed}
+.explanation{display:none;margin-top:.8rem;padding:.8rem 1rem;background:var(--surface);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:.85rem;color:var(--text-dim);line-height:1.65;animation:fadeIn .3s ease}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent-light)}
+.tense-tag{display:inline-block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:2px 8px;border-radius:4px;margin-right:6px}
+.completion-banner{display:none;text-align:center;padding:2rem;background:var(--surface);border:2px solid var(--accent);border-radius:var(--radius);margin-top:2rem;animation:fadeIn .5s ease}
+.completion-banner.show{display:block}
+.completion-banner h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--accent-light);margin-bottom:.5rem}
+.completion-banner p{color:var(--text-dim)}
+.tip{background:var(--surface);border:1px solid var(--accent);border-radius:var(--radius);padding:.8rem 1rem;margin-bottom:1.5rem;font-size:.88rem;color:var(--accent-light);line-height:1.5}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.header h1{font-size:1.5rem}.options{flex-direction:column}.container{padding:1.2rem 1rem 3rem}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <a href="index.html" class="back-link">← Back to exercises</a>
+
+  <div class="header">
+    <div class="badge">Units 1–4 · Mixed Practice</div>
+    <h1>Mixed Tenses Challenge</h1>
+    <div class="subtitle">15 questions testing ALL tenses from Units 1–4. Can you get them all right?</div>
+  </div>
+
+  <div class="score-bar">
+    <div class="score-text"><strong id="scoreNum">0</strong> / <span id="totalNum">15</span></div>
+    <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+    <button class="reset-btn" onclick="resetAll()">Reset</button>
+  </div>
+
+  <div class="tip">💡 Each question could require ANY tense from Units 1–4: Present Simple, Present Continuous, Past Simple, Past Continuous, Present Perfect Simple, Present Perfect Continuous, Past Perfect Simple, Past Perfect Continuous, <em>used to</em>, or <em>would</em>. Read the context carefully!</div>
+
+  <div class="question-card" id="q1">
+    <div class="q-num">Question 1</div>
+    <div class="q-text">Water <span class="blank">______</span> at 100°C. <span class="context">(a scientific fact — always true)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q1','right')">boils</button>
+      <button class="option-btn" onclick="checkMC(this,'q1','wrong')">is boiling</button>
+      <button class="option-btn" onclick="checkMC(this,'q1','wrong')">has boiled</button>
+    </div>
+    <div class="explanation" id="exp-q1"><span class="tense-tag" style="background:#1A6B5C;color:#FFF">Present Simple</span> General facts and scientific truths → <strong>present simple</strong>. This is always true, not just happening now.</div>
+  </div>
+
+  <div class="question-card" id="q2">
+    <div class="q-num">Question 2</div>
+    <div class="q-text">Look! The prices <span class="blank">______</span> again! <span class="context">(a trend that is changing right now)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q2','wrong')">go up</button>
+      <button class="option-btn" onclick="checkMC(this,'q2','right')">are going up</button>
+      <button class="option-btn" onclick="checkMC(this,'q2','wrong')">went up</button>
+    </div>
+    <div class="explanation" id="exp-q2"><span class="tense-tag" style="background:#1A6B5C;color:#FFF">Present Continuous</span> A changing trend happening now → <strong>present continuous</strong>. "Look!" signals something we can observe at this moment.</div>
+  </div>
+
+  <div class="question-card" id="q3">
+    <div class="q-num">Question 3</div>
+    <div class="q-text">She <span class="blank">______</span> to Paris three times last year. <span class="context">(specific finished time: last year)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q3','wrong')">has been</button>
+      <button class="option-btn" onclick="checkMC(this,'q3','right')">went</button>
+      <button class="option-btn" onclick="checkMC(this,'q3','wrong')">had gone</button>
+    </div>
+    <div class="explanation" id="exp-q3"><span class="tense-tag" style="background:#6B2D6E;color:#FFF">Past Simple</span> "Last year" = specific finished time → <strong>past simple</strong>. You cannot use present perfect with "last year."</div>
+  </div>
+
+  <div class="question-card" id="q4">
+    <div class="q-num">Question 4</div>
+    <div class="q-text">I <span class="blank">______</span> my homework when the phone rang. <span class="context">(background activity interrupted by a shorter action)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q4','wrong')">did</button>
+      <button class="option-btn" onclick="checkMC(this,'q4','right')">was doing</button>
+      <button class="option-btn" onclick="checkMC(this,'q4','wrong')">had done</button>
+    </div>
+    <div class="explanation" id="exp-q4"><span class="tense-tag" style="background:#6B2D6E;color:#FFF">Past Continuous</span> Background activity in progress → <strong>past continuous</strong>. The phone ringing (past simple) interrupts the background scene.</div>
+  </div>
+
+  <div class="question-card" id="q5">
+    <div class="q-num">Question 5</div>
+    <div class="q-text"><span class="blank">______</span> to Japan? <span class="context">(asking about experience at any time in your life)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q5','wrong')">Did you ever go</button>
+      <button class="option-btn" onclick="checkMC(this,'q5','right')">Have you ever been</button>
+      <button class="option-btn" onclick="checkMC(this,'q5','wrong')">Had you ever been</button>
+    </div>
+    <div class="explanation" id="exp-q5"><span class="tense-tag" style="background:#2D5090;color:#FFF">Present Perfect</span> Life experience up to now, no specific time stated → <strong>present perfect</strong> + "ever". Past perfect would only work if asking about experience before another past event.</div>
+  </div>
+
+  <div class="question-card" id="q6">
+    <div class="q-num">Question 6</div>
+    <div class="q-text">I <span class="blank">______</span> this answer. Can you explain it to me? <span class="context">(a state verb — understanding)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q6','right')">don't understand</button>
+      <button class="option-btn" onclick="checkMC(this,'q6','wrong')">&#x2019;m not understanding</button>
+      <button class="option-btn" onclick="checkMC(this,'q6','wrong')">haven't understood</button>
+    </div>
+    <div class="explanation" id="exp-q6"><span class="tense-tag" style="background:#1A6B5C;color:#FFF">Present Simple</span> "Understand" is a <strong>state verb</strong> → always present simple. State verbs are never used in the continuous form.</div>
+  </div>
+
+  <div class="question-card" id="q7">
+    <div class="q-num">Question 7</div>
+    <div class="q-text">She <span class="blank">______</span> here since 2018. <span class="context">(started in the past and continues now)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q7','wrong')">works</button>
+      <button class="option-btn" onclick="checkMC(this,'q7','wrong')">worked</button>
+      <button class="option-btn" onclick="checkMC(this,'q7','right')">has worked</button>
+    </div>
+    <div class="explanation" id="exp-q7"><span class="tense-tag" style="background:#2D5090;color:#FFF">Present Perfect</span> "Since 2018" = started in the past and continues to now → <strong>present perfect</strong> (simple or continuous). Past simple would mean she no longer works here.</div>
+  </div>
+
+  <div class="question-card" id="q8">
+    <div class="q-num">Question 8</div>
+    <div class="q-text">He <span class="blank">______</span> a bicycle before he moved to the city. <span class="context">(a past state — something he no longer has)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q8','right')">used to own</button>
+      <button class="option-btn" onclick="checkMC(this,'q8','wrong')">would own</button>
+      <button class="option-btn" onclick="checkMC(this,'q8','wrong')">had owned</button>
+    </div>
+    <div class="explanation" id="exp-q8"><span class="tense-tag" style="background:#9C5A1C;color:#FFF">Used to</span> "Own" is a state verb → <strong>used to</strong> (NOT would). "Would" only works for past repeated <strong>actions</strong>, never states like own, be, know, live.</div>
+  </div>
+
+  <div class="question-card" id="q9">
+    <div class="q-num">Question 9</div>
+    <div class="q-text">By the time we arrived, the film <span class="blank">______</span>. <span class="context">(one event before another in the past)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q9','wrong')">already started</button>
+      <button class="option-btn" onclick="checkMC(this,'q9','right')">had already started</button>
+      <button class="option-btn" onclick="checkMC(this,'q9','wrong')">has already started</button>
+    </div>
+    <div class="explanation" id="exp-q9"><span class="tense-tag" style="background:#8B1A1A;color:#FFF">Past Perfect</span> "By the time" + past simple → the earlier event uses <strong>past perfect</strong>. The film started BEFORE we arrived. "Already" goes between had and the main verb.</div>
+  </div>
+
+  <div class="question-card" id="q10">
+    <div class="q-num">Question 10</div>
+    <div class="q-text">Sorry I'm late — I <span class="blank">______</span> all morning. That's why I look so tired! <span class="context">(focus on the activity and its duration — explains the current state)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q10','wrong')">&#x2019;ve studied</button>
+      <button class="option-btn" onclick="checkMC(this,'q10','right')">&#x2019;ve been studying</button>
+      <button class="option-btn" onclick="checkMC(this,'q10','wrong')">studied</button>
+    </div>
+    <div class="explanation" id="exp-q10"><span class="tense-tag" style="background:#2D5090;color:#FFF">Present Perfect Continuous</span> Focus on the <strong>activity and duration</strong> leading up to now, explaining a present result (looking tired) → <strong>present perfect continuous</strong>.</div>
+  </div>
+
+  <div class="question-card" id="q11">
+    <div class="q-num">Question 11</div>
+    <div class="q-text">When I was a child, we <span class="blank">______</span> football in the park every weekend. <span class="context">(a repeated past action/habit)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q11','right')">would play</button>
+      <button class="option-btn" onclick="checkMC(this,'q11','wrong')">were playing</button>
+      <button class="option-btn" onclick="checkMC(this,'q11','wrong')">have played</button>
+    </div>
+    <div class="explanation" id="exp-q11"><span class="tense-tag" style="background:#9C5A1C;color:#FFF">Would</span> A repeated past <strong>action</strong> (not a state) → <strong>would + verb</strong> is perfect. "Used to play" would also be correct. "Every weekend" confirms this was habitual.</div>
+  </div>
+
+  <div class="question-card" id="q12">
+    <div class="q-num">Question 12</div>
+    <div class="q-text">I <span class="blank">______</span> three cups of coffee today. <span class="context">(counting completed actions in an unfinished time period)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q12','wrong')">drank</button>
+      <button class="option-btn" onclick="checkMC(this,'q12','right')">&#x2019;ve had</button>
+      <button class="option-btn" onclick="checkMC(this,'q12','wrong')">&#x2019;ve been having</button>
+    </div>
+    <div class="explanation" id="exp-q12"><span class="tense-tag" style="background:#2D5090;color:#FFF">Present Perfect Simple</span> "Today" = unfinished time → present perfect. Counting (three cups) → <strong>simple</strong>, not continuous. Continuous emphasises duration, not quantity.</div>
+  </div>
+
+  <div class="question-card" id="q13">
+    <div class="q-num">Question 13</div>
+    <div class="q-text">The family <span class="blank">______</span> for months before they finally found a new home. <span class="context">(how long an activity continued before a past event)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q13','wrong')">searched</button>
+      <button class="option-btn" onclick="checkMC(this,'q13','wrong')">had searched</button>
+      <button class="option-btn" onclick="checkMC(this,'q13','right')">had been searching</button>
+    </div>
+    <div class="explanation" id="exp-q13"><span class="tense-tag" style="background:#8B1A1A;color:#FFF">Past Perfect Continuous</span> Duration of an activity ("for months") leading up to another past event → <strong>past perfect continuous</strong>. This emphasises how long the search continued before the result.</div>
+  </div>
+
+  <div class="question-card" id="q14">
+    <div class="q-num">Question 14</div>
+    <div class="q-text">I <span class="blank">______</span> him since we were children. <span class="context">(a state verb — knowing someone — from past to now)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q14','wrong')">know</button>
+      <button class="option-btn" onclick="checkMC(this,'q14','right')">&#x2019;ve known</button>
+      <button class="option-btn" onclick="checkMC(this,'q14','wrong')">&#x2019;ve been knowing</button>
+    </div>
+    <div class="explanation" id="exp-q14"><span class="tense-tag" style="background:#2D5090;color:#FFF">Present Perfect Simple</span> "Since" = past to now → present perfect. "Know" is a <strong>state verb</strong> → <strong>never continuous</strong>. "I've known" is the only correct option.</div>
+  </div>
+
+  <div class="question-card" id="q15">
+    <div class="q-num">Question 15</div>
+    <div class="q-text">It's the best book I <span class="blank">______</span>. <span class="context">(superlative + experience up to now)</span></div>
+    <div class="options">
+      <button class="option-btn" onclick="checkMC(this,'q15','wrong')">ever read</button>
+      <button class="option-btn" onclick="checkMC(this,'q15','right')">&#x2019;ve ever read</button>
+      <button class="option-btn" onclick="checkMC(this,'q15','wrong')">had ever read</button>
+    </div>
+    <div class="explanation" id="exp-q15"><span class="tense-tag" style="background:#2D5090;color:#FFF">Present Perfect</span> "It's the best/first/longest… I've ever…" is a fixed structure using <strong>present perfect</strong>. It connects a superlative to your experience up to NOW.</div>
+  </div>
+
+  <div class="completion-banner" id="completionBanner">
+    <h3>🎉 Challenge Complete!</h3>
+    <p>You've completed the Mixed Tenses Challenge covering all tenses from Units 1–4.</p>
+    <p style="margin-top:.5rem;font-size:.9rem">Review your answers above, then try the <a href="tenses-comparison.html" style="color:var(--accent-light)">Tense Comparison Reference</a> to review any rules you found tricky.</p>
+  </div>
+
+</div>
+
+<script>
+let score=0;const total=15;const answered=new Set();
+function updateScore(){document.getElementById('scoreNum').textContent=score;document.getElementById('totalNum').textContent=total;document.getElementById('progressFill').style.width=(score/total*100)+'%';if(answered.size>=total)document.getElementById('completionBanner').classList.add('show');}
+function checkMC(btn,qId,result){if(answered.has(qId))return;answered.add(qId);const card=document.getElementById(qId);const buttons=card.querySelectorAll('.option-btn');buttons.forEach(b=>b.classList.add('chosen'));if(result==='right'){btn.classList.add('right');card.classList.add('correct');score++;}else{btn.classList.add('wrong-choice');card.classList.add('wrong');buttons.forEach(b=>{if(b!==btn&&b.getAttribute('onclick').includes("'right'"))b.classList.add('show-correct');});}document.getElementById('exp-'+qId).classList.add('show');updateScore();}
+function resetAll(){score=0;answered.clear();for(let i=1;i<=15;i++){const qId='q'+i;const card=document.getElementById(qId);card.classList.remove('correct','wrong');card.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('chosen','right','wrong-choice','show-correct');});document.getElementById('exp-'+qId).classList.remove('show');}document.getElementById('completionBanner').classList.remove('show');updateScore();}
+</script>
+</body>
+</html>
